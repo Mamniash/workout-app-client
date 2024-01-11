@@ -7,7 +7,7 @@ import styles from './Header.module.scss'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
 
-const Header = ({ backLink = '' }) => {
+const Header = ({ backLink = '/' }) => {
 	/* TODO: React router useHistory */
 
 	const { pathname } = useLocation()
@@ -17,25 +17,29 @@ const Header = ({ backLink = '' }) => {
 
 	return (
 		<header className={styles.header}>
-			{pathname !== '/' || !isAuth ? (
-				<button
-					onClick={() => {
-						navigate(isAuth ? backLink : '/auth')
-					}}
-				>
-					<IoMdArrowBack fill='#fff' fontSize={29} />
-				</button>
-			) : (
-				<button
-					onClick={() => {
-						navigate('/profile')
-					}}
-				>
-					<FaUser fill='#fff' fontSize={29} />
-				</button>
+			{isAuth && (
+				<>
+					{pathname == '/' ? (
+						<button
+							onClick={() => {
+								navigate('/profile')
+							}}
+						>
+							<FaUser fill='#fff' fontSize={29} />
+						</button>
+					) : (
+						<button
+							onClick={() => {
+								navigate(backLink) //TODO create navigate to /auth from 4o4
+							}}
+						>
+							<IoMdArrowBack fill='#fff' fontSize={29} />
+						</button>
+					)}
+					{/* User profile */}
+					<Hamburger />
+				</>
 			)}
-			{/* User profile */}
-			{isAuth && <Hamburger />}
 		</header>
 	)
 }

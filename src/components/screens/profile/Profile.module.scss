@@ -1,0 +1,32 @@
+@import 'src/assets/styles/variables';
+
+.before_after {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+
+	@media (max-width: $mobile) {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	> div {
+		width: 50%;
+		@media (max-width: $mobile) {
+			width: 48%;
+		}
+	}
+	img {
+		width: 200px;
+		height: 300px;
+		border-radius: 10px;
+	}
+	.heading {
+		margin-bottom: 0.5rem;
+	}
+}
+
+.center {
+	text-align: center;
+	margin: 6px 0 18px;
+}

@@ -24,6 +24,7 @@ export const useAuthPage = () => {
 	}, [isAuth])
 
 	const { mutate, isPending } = useMutation({
+		mutationKey: ['auth/login user'],
 		mutationFn: ({ email, password }) => {
 			console.log(`${email} ${password} ${type}`)
 			console.log(AuthService.main(email, password, type))
@@ -46,5 +47,5 @@ export const useAuthPage = () => {
 		errors,
 		isPending,
 		onSubmit
-	}
+	} //TODO useMemo add to it
 }

@@ -14,7 +14,7 @@ const Auth = () => {
 		<>
 			<Layout heading='Sign in' bgImage='/images/auth-bg.png' />
 			<div className='wrapper-inner-page'>
-				{(isPending || isPending) && <Loader />}
+				{isPending && <Loader />}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						error={errors?.email?.message}
