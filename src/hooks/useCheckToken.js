@@ -11,6 +11,6 @@ export const useCheckToken = () => {
 	useEffect(() => {
 		const token = Cookies.get(TOKEN)
 		if (!token) setIsAuth(false)
-		console.log(`useEffect has ran. isAuth -> ${isAuth} TOKEN -> ${token}`)
+		console.log(`TOKEN -> ${token}`)
 	}, [pathname, isAuth])
 }

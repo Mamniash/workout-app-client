@@ -5,7 +5,7 @@ const EXERCISES = '/exercises'
 class ExerciseService {
 	//data = { name, times, iconPath }
 	async getAll() {
-		return $axios.get(`/${EXERCISES}`)
+		return $axios.get(EXERCISES)
 	}
 	async create(body) {
 		return $axios.post(EXERCISES, body)
