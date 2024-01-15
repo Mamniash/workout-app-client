@@ -1,6 +1,6 @@
 import { $axios } from '../../api'
 
-const WORKOUTS = '/workouts'
+export const WORKOUTS = '/workouts'
 
 class WorkoutService {
 	//data = { name, exerciseIds }

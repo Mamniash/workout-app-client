@@ -3,6 +3,9 @@ import Home from '../components/screens/home/Home'
 import NewWorkout from '../components/screens/new-workout/NewWorkout'
 import Profile from '../components/screens/profile/Profile'
 import NewExercise from '../components/screens/new-exercise/NewExercise'
+import SingleExercise from '../components/screens/singleExercise/SingleExercise.jsx'
+import ListWorkouts from '../components/screens/listWorkouts/ListWorkouts.jsx'
+import SingleWorkout from '../components/screens/singleWorkout/SingleWorkout.jsx'
 
 export const routes = [
 	{
@@ -30,24 +33,23 @@ export const routes = [
 
 		component: NewExercise,
 		isAuth: true
+	},
+	{
+		path: '/workout/:id',
+
+		component: SingleWorkout,
+		isAuth: true
+	},
+	{
+		path: '/workouts',
+
+		component: ListWorkouts,
+		isAuth: true
+	},
+	{
+		path: '/exercise/:id',
+
+		component: SingleExercise,
+		isAuth: true
 	}
-
-	// {
-	// 	path: '/workout/:id',
-
-	// 	component: SingleWorkout,
-	// 	isAuth: true,
-	// },
-	// {
-	// 	path: '/workouts',
-
-	// 	component: ListWorkouts,
-	// 	isAuth: true,
-	// },
-	// {
-	// 	path: '/exercise/:id',
-
-	// 	component: SingleExercise,
-	// 	isAuth: true,
-	// }
 ]

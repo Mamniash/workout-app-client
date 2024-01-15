@@ -44,11 +44,11 @@ const Profile = () => {
 				<div className={styles.before_after}>
 					<div>
 						<div className={styles.heading}>Before</div>
-						<img src='/public/images/after.jpg' alt='img' draggable={false} />
+						<img src='/images/after.jpg' alt='img' draggable={false} />
 					</div>
 					<div>
 						<div className={styles.heading}>After</div>
-						<img src='/public/images/after.jpg' alt='img' draggable={false} />
+						<img src='/images/after.jpg' alt='img' draggable={false} />
 					</div>
 				</div>
 			</div>

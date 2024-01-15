@@ -6,18 +6,6 @@ import Statistic from '../../ui/statistic/Statistic'
 
 function Home() {
 	const navigate = useNavigate()
-	const ob1 = {
-		title: 'Minutes',
-		content: '20'
-	}
-	const ob2 = {
-		title: 'Level',
-		content: 'Hard'
-	}
-	const ob3 = {
-		title: 'Up',
-		content: '5%'
-	}
 	return (
 		<Layout bgImage=''>
 			<Button clickHandler={() => navigate('/new-workout')}>New</Button>

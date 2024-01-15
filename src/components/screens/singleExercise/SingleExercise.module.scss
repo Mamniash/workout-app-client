@@ -1,0 +1,13 @@
+.heading {
+	display: flex;
+	align-items: center;
+	> img {
+		margin-right: 10px;
+	}
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
