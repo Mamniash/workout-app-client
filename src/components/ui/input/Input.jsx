@@ -7,7 +7,6 @@ const Input = ({ placeholder }) => {
 
 	const handleChange = event => {
 		setValue(event.target.value)
-		console.log(placeholder)
 	}
 
 	return (

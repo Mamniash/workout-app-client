@@ -3,7 +3,6 @@ import { useGetLog } from './useSingleExercise'
 import styles from './SingleExercise.module.scss'
 const SingleExercise = () => {
 	const { data: exerciseLog, isPending, isSuccess } = useGetLog()
-	console.log(exerciseLog)
 	return (
 		<>
 			<HeaderExercise exerciseLog={exerciseLog} isSuccess={isSuccess} />

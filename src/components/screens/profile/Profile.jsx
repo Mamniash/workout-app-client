@@ -9,7 +9,6 @@ import Header from '../../layout/header/Header'
 
 const Profile = () => {
 	const { data, isLoading } = useProfile()
-	console.log(data)
 
 	return (
 		<>
