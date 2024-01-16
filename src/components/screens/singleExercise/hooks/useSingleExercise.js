@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import ExerciseLogProvider from '../../../services/exercises/exercise-log.service'
 import { useParams } from 'react-router-dom'
+import ExerciseLogProvider from '../../../../services/exercises/exercise-log.service'
 
 export const useGetLog = () => {
 	const { id } = useParams()

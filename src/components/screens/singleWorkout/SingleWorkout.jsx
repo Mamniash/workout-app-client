@@ -15,7 +15,8 @@ const SingleWorkout = () => {
 	const {
 		data: workoutLog,
 		isSuccess,
-		isPending
+		isPending,
+		error
 	} = useQuery({
 		queryKey: ['get workout log', id],
 		queryFn: () => WorkoutLogService.getById(id),
@@ -29,9 +30,9 @@ const SingleWorkout = () => {
 				className='wrapper-inner-page'
 				style={{ paddingLeft: 0, paddingRight: 0 }}
 			>
-				{/* <div style={{ width: '90%', margin: '0 auto' }}>
+				<div style={{ width: '90%', margin: '0 auto' }}>
 					{error && <Alert type='error' text={error} />}
-				</div> */}
+				</div>
 
 				{isPending ? (
 					<Loader />
