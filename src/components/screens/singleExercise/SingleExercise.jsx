@@ -1,36 +1,55 @@
-import cn from 'clsx'
 import Loader from '../../ui/Loader'
 import Alert from '../../ui/alert/Alert'
-import HeaderExercise from './HeaderExercise'
-import styles from './SingleExercise.module.scss'
-import { useGetLog } from './hooks/useSingleExercise'
+
+import { useCompleteLog } from './hooks/useCompleteLog'
 import { useExerciseLog } from './hooks/useExerciseLog'
-import HeaderTable from './table/HeaderTable'
-import RowTable from './table/RowTable'
+
+import ExerciseError from './ExerciseError'
+import styles from './ExerciseLog.module.scss'
+import HeaderExerciseLog from './HeaderExerciseLog'
+import TableHeader from './table/TableHeader'
+import TableRow from './table/TableRow'
 
 const SingleExercise = () => {
-	const { data: exerciseLog, isPending, isSuccess } = useExerciseLog()
-	console.log(exerciseLog)
+	const {
+		exerciseLog,
+		isLoading,
+		isSuccess,
+		errorChange,
+		getState,
+		onChangeState,
+		toggleTime
+	} = useExerciseLog()
+
+	const { completeLog, errorCompleted } = useCompleteLog()
+
 	return (
 		<>
-			<HeaderExercise exerciseLog={exerciseLog} isSuccess={isSuccess} />
+			<HeaderExerciseLog exerciseLog={exerciseLog} isSuccess={isSuccess} />
 			<div
 				className='wrapper-inner-page'
 				style={{ paddingLeft: 0, paddingRight: 0 }}
 			>
-				{/* <ErrorsExercise errors={[errorChange, errorCompleted]}/> */}
-				{isPending ? (
+				<ExerciseError errors={[errorChange, errorCompleted]} />
+				{isLoading ? (
 					<Loader />
 				) : (
 					<div className={styles.wrapper}>
-						<HeaderTable />
-						{exerciseLog?.times?.map(time => (
-							<RowTable key={time.id} item={time} />
+						<TableHeader />
+						{exerciseLog?.times.map(item => (
+							<TableRow
+								getState={getState}
+								onChangeState={onChangeState}
+								toggleTime={toggleTime}
+								item={item}
+								key={item.id}
+							/>
 						))}
-						{isSuccess && exerciseLog?.times?.length === 0 && (
-							<Alert type='warning' text='Times not found' />
-						)}
 					</div>
+				)}
+
+				{isSuccess && exerciseLog?.times?.length === 0 && (
+					<Alert type='warning' text='Times not found' />
 				)}
 			</div>
 		</>
