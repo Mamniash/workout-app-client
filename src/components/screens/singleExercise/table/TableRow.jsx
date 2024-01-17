@@ -44,8 +44,13 @@ const TableRow = ({ item, getState, onChangeState, toggleTime }) => {
 							: '/images/exercises/check.svg'
 					}
 					className={styles.checkbox}
-					alt=''
+					alt='#'
 					onClick={() => {
+						onChangeState(
+							item.id,
+							'isCompleted',
+							!getState(item.id, 'isCompleted')
+						)
 						toggleTime(item.id, !getState(item.id, 'isCompleted'))
 					}}
 				/>

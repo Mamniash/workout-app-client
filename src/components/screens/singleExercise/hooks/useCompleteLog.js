@@ -12,7 +12,7 @@ export const useCompleteLog = () => {
 
 	const { mutate, error: errorCompleted } = useMutation({
 		mutationKey: ['complete log'],
-		mutationFn: body => ExerciseLogService.complete(id, body),
+		mutationFn: body => ExerciseLogService.setCompleted(id, body),
 		onSuccess: ({ data }) => {
 			navigate(`/workout/${data.workoutLogId}`)
 		}
