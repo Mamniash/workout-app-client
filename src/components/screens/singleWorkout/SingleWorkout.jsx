@@ -1,9 +1,10 @@
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import { useNavigate, useParams } from 'react-router-dom'
 import WorkoutLogService from '../../../services/workouts/workout-log.service.js'
 
 import styles from './SingleWorkout.module.scss'
 import Alert from '../../ui/alert/Alert'
+import Button from '../../ui/button/Button'
 import Loader from '../../ui/Loader.jsx'
 import Item from './Item.jsx'
 import { Fragment } from 'react'
@@ -22,6 +23,16 @@ const SingleWorkout = () => {
 		queryFn: () => WorkoutLogService.getById(id),
 		select: ({ data }) => data
 	})
+
+	const { mutate: completeWorkout } = useMutation({
+		mutationKey: ['finish workout', id],
+		mutationFn: () => WorkoutLogService.setCompleted(id),
+		onSuccess: () => {
+			navigate('/workouts')
+		}
+	})
+
+	console.log(workoutLog)
 
 	return (
 		<>
@@ -47,6 +58,7 @@ const SingleWorkout = () => {
 									)}
 							</Fragment>
 						))}
+						<Button clickHandler={completeWorkout}>Finish workout</Button>
 					</div>
 				)}
 			</div>

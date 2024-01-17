@@ -33,7 +33,7 @@
 		}
 	}
 
-	&.completed {
+	> div.completed {
 		background-color: $hard-dark-accent;
 	}
 }
