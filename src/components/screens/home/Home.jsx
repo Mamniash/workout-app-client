@@ -7,13 +7,23 @@ import Statistic from '../../ui/statistic/Statistic'
 function Home() {
 	const navigate = useNavigate()
 	return (
-		<Layout bgImage=''>
-			<Button clickHandler={() => navigate('/new-workout')}>New</Button>
+		<>
+			<Layout heading='some heading' />
 
-			<h1 className={styles.heading}>EXERCISES FOR THE SHOULDERS</h1>
+			<div className={styles.wrapper}>
+				<Button
+					clickHandler={() => navigate('/workouts')}
+					size='xx'
+					type='accent'
+				>
+					Start
+				</Button>
 
-			<Statistic />
-		</Layout>
+				{/* <Statistic /> */}
+			</div>
+
+			{/* <h1 className={styles.heading}>EXERCISES FOR THE SHOULDERS</h1> */}
+		</>
 	)
 }
 

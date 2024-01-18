@@ -16,7 +16,7 @@
 
 		> svg {
 			> path {
-				fill: #fff;
+				fill: $white;
 			}
 		}
 	}
@@ -25,12 +25,12 @@
 		position: absolute;
 		top: calc(100% + 8px);
 		right: 0;
-		background-color: #fff;
-		padding: 10px 12px;
+		background-color: $white;
+		padding: 15px 18px;
 		font-size: 16px;
 		box-shadow: $bx-16;
 		border-radius: 10px 0 10px 10px;
-		min-width: 116px;
+		min-width: 160px;
 		display: none;
 		animation: opacity 0.4s;
 
@@ -41,19 +41,16 @@
 		> ul {
 			list-style: none;
 
+			a,
 			button {
-				font-size: 16px;
-			}
-
-			a {
-				color: #000;
+				font-size: 24px;
+				color: $dark-accent;
 				text-decoration: none;
-				transition: color 0.2s ease;
+				transition: color 0.3s ease;
 
 				&:hover,
 				&.active {
 					color: $accent;
-					margin: 4px 0;
 				}
 			}
 		}

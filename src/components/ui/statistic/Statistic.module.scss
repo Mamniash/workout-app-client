@@ -7,7 +7,7 @@
 
 	&.profile {
 		> .count .heading {
-			color: #775f5f;
+			color: $error;
 		}
 	}
 
@@ -19,12 +19,12 @@
 			font-size: 18px;
 		}
 		.heading {
-			color: $dark-accent;
+			color: $white;
 			text-transform: capitalize;
 		}
 		.number {
 			font-weight: bold;
-			color: #fff;
+			color: $white;
 		}
 	}
 }

@@ -2,9 +2,10 @@
 
 .input {
 	background-color: $dark-accent;
-	border: 1px solid transparent;
+	border: $my-border;
+	box-shadow: $my-bx;
 	color: $white;
-	font-size: 16px;
+	font-size: 18px;
 	padding: 14px;
 	border-radius: 10px;
 	margin-bottom: 0.7rem;
@@ -16,12 +17,12 @@
 	}
 
 	&::placeholder {
-		color: #964e86;
+		color: $white;
 	}
 }
 
 .error {
-	color: #8d2b3d;
+	color: $error;
 	font-size: 1.8rem;
-	margin-bottom: 0.2rem;
+	margin-bottom: 0.8rem;
 }

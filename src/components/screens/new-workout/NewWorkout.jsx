@@ -5,9 +5,7 @@ import Alert from '../../ui/alert/Alert'
 
 import Layout from '../../layout/Layout'
 
-import styles from './NewWorkout.module.scss'
 import { useNewWorkout } from './useNewWorkout.js'
-import cn from 'clsx'
 import { Link } from 'react-router-dom'
 import SelectExercises from './SelectExercises.jsx'
 
@@ -25,13 +23,10 @@ const NewWorkout = () => {
 
 	return (
 		<>
-			<Layout
-				heading='Create new workout'
-				bgImage='/images/new-workout-bg.jpg'
-			/>
+			<Layout heading='Create new workout' bgImage='/images/My/tmp.jpg' />
 			<div className='wrapper-inner-page'>
 				{error && <Alert type='error' text={error} />}
-				{isSuccess && <Alert text={'Workout has created'} />}
+				{isSuccess && !error && <Alert text={'Workout has created'} />}
 				{isPending && <Loader />}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Field
@@ -51,7 +46,7 @@ const NewWorkout = () => {
 
 					<SelectExercises control={control} />
 
-					<Button>Create</Button>
+					<Button type='accent'>Create</Button>
 				</form>
 			</div>
 		</>

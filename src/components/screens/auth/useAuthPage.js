@@ -9,6 +9,7 @@ export const useAuthPage = () => {
 	const [type, setType] = useState('register')
 	const navigate = useNavigate()
 	const { isAuth, setIsAuth } = useAuth()
+	const [error, setError] = useState()
 
 	const {
 		register,
@@ -23,16 +24,23 @@ export const useAuthPage = () => {
 		if (isAuth) navigate('/')
 	}, [isAuth])
 
-	const { mutate, isPending } = useMutation({
+	const { mutate, isPending, isSuccess } = useMutation({
 		mutationKey: ['auth/login user'],
 		mutationFn: ({ email, password }) => {
 			console.log(`${email} ${password} ${type}`)
-			console.log(AuthService.main(email, password, type))
+			AuthService.main(email, password, type).catch(error => {
+				console.log(error)
+				setError(error.message)
+				throw new Error(error)
+			})
 		},
 		onSuccess: (_data, { email, password }) => {
 			console.log(email, password)
 			reset()
-			setIsAuth(true)
+
+			setTimeout(() => {
+				//setIsAuth(true) //!!!!!!!!!!!!!!
+			}, 1000)
 		}
 	})
 
@@ -46,6 +54,8 @@ export const useAuthPage = () => {
 		handleSubmit,
 		errors,
 		isPending,
-		onSubmit
+		onSubmit,
+		isSuccess,
+		error
 	} //TODO useMemo add to it
 }

@@ -1,7 +1,7 @@
 @import 'src/assets/styles/variables';
 
 .time {
-	color: #deb6b6;
+	color: $time;
 	font-size: 20px;
 }
 
@@ -13,6 +13,8 @@
 		color: $white;
 		width: 90%;
 		border-radius: 10px;
+		border: $my-border;
+		box-shadow: $my-bx;
 
 		> button,
 		> a {
@@ -34,13 +36,13 @@
 	}
 
 	> div.completed {
-		background-color: $hard-dark-accent;
+		background: $tmp-1-dark;
 	}
 }
 
 .line {
 	width: 90%;
 	height: 1px;
-	background-color: $hard-dark-accent;
+	background: $tmp-gradient;
 	margin: 30px auto;
 }

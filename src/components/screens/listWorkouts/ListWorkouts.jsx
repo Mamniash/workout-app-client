@@ -10,7 +10,7 @@ const ListWorkouts = () => {
 		useListWorkout()
 	return (
 		<>
-			<Layout heading='ListWorkouts' bgImage={'/images/ex-bg-1.jpg'} />
+			<Layout heading='ListWorkouts' bgImage={'/images/My/tmp.jpg'} />
 			<div
 				className='wrapper-inner-page'
 				style={{ paddingLeft: 0, paddingRight: 0 }}

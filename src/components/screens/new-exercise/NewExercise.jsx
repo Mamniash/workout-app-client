@@ -28,12 +28,12 @@ const NewExercise = () => {
 		<>
 			<Layout
 				heading='Create new exercise'
-				bgImage='/images/new-exercise-bg.jpg'
+				bgImage='/images/My/tmp.jpg'
 				backLink='/new-workout'
 			/>
-			<div className='wrapper-inner-page'>
+			<div className={'wrapper-inner-page'}>
 				{error && <Alert type='error' text={error} />}
-				{isSuccess && <Alert text={'Exercise has created'} />}
+				{isSuccess && !error && <Alert text={'Exercise has created'} />}
 				{isPending && <Loader />}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Field
@@ -53,11 +53,13 @@ const NewExercise = () => {
 						register={register}
 						options={{
 							valueAsNumber: true,
-							validate: value => value > 0 || 'Times must be number > 0',
+							validate: value =>
+								(value > 0 && value < 16) || 'Times must be number in [0, 15]',
 							required: 'Times is required'
 						}}
 						type='text'
 						placeholder='Times'
+						style={{ marginTop: '15px' }}
 					/>
 
 					<Controller
@@ -77,7 +79,7 @@ const NewExercise = () => {
 										})}
 										onClick={() => onChange(getIconPath(name))}
 										draggable={false}
-										height='45'
+										height='60'
 									/>
 								))}
 							</div>
@@ -86,7 +88,7 @@ const NewExercise = () => {
 					{errors?.iconPath && (
 						<div className='error'>{errors?.iconPath?.message}</div>
 					)}
-					<Button>Create</Button>
+					<Button type='accent'>Create</Button>
 				</form>
 			</div>
 		</>

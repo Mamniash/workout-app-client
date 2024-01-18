@@ -2,10 +2,12 @@ import { useMutation } from '@tanstack/react-query'
 import { useForm, Controller } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import ExerciseService from '../../../services/exercises/exercise.service'
+import { useState } from 'react'
 
 export const useExercisePage = () => {
 	const navigate = useNavigate()
 	const data = ['chest', 'shoulders', 'biceps', 'legs', 'hit', 'back']
+	const [error, setError] = useState()
 
 	const {
 		register,
@@ -17,11 +19,15 @@ export const useExercisePage = () => {
 		mode: 'onChange'
 	})
 
-	const { mutate, isPending, error, isSuccess } = useMutation({
+	const { mutate, isPending, isSuccess } = useMutation({
 		mutationKey: ['create exercise'],
 		mutationFn: body => {
 			console.log(`${body?.name} ${body?.times} ${body?.iconPath}`)
-			console.log(ExerciseService.create(body))
+			ExerciseService.create(body).catch(error => {
+				console.log(error)
+				setError(error.message)
+				throw new Error(error)
+			})
 		},
 		onSuccess: (_data, body) => {
 			console.log(body)

@@ -8,8 +8,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
 
 const Header = ({ backLink = '/' }) => {
-	/* TODO: React router useHistory */
-
 	const { pathname } = useLocation()
 	const navigate = useNavigate()
 
@@ -21,22 +19,23 @@ const Header = ({ backLink = '/' }) => {
 				<>
 					{pathname == '/' ? (
 						<button
+							aria-label='Go to profile'
 							onClick={() => {
 								navigate('/profile')
 							}}
 						>
-							<FaUser fill='#fff' fontSize={29} />
+							<FaUser fill='#fff' fontSize={35} />
 						</button>
 					) : (
 						<button
+							aria-label='Go back'
 							onClick={() => {
-								navigate(backLink) //TODO create navigate to /auth from 4o4
+								navigate(backLink)
 							}}
 						>
-							<IoMdArrowBack fill='#fff' fontSize={29} />
+							<IoMdArrowBack fill='#fff' fontSize={35} />
 						</button>
 					)}
-					{/* User profile */}
 					<Hamburger />
 				</>
 			)}

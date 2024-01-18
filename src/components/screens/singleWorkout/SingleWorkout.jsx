@@ -58,7 +58,9 @@ const SingleWorkout = () => {
 									)}
 							</Fragment>
 						))}
-						<Button clickHandler={completeWorkout}>Finish workout</Button>
+						<Button clickHandler={completeWorkout} type={'accent'}>
+							Finish workout
+						</Button>
 					</div>
 				)}
 			</div>

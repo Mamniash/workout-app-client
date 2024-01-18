@@ -23,31 +23,37 @@
 }
 
 *::-webkit-input-placeholder {
-	color: #c0c0c0;
+	color: $white;
 	opacity: 1;
 }
 *:-moz-placeholder {
-	color: #c0c0c0;
+	color: $white;
 	opacity: 1;
 }
 
 *::-moz-placeholder {
-	color: #c0c0c0;
+	color: $white;
 	opacity: 1;
 }
 
 *:-ms-input-placeholder {
-	color: #c0c0c0;
+	color: $white;
 	opacity: 1;
+}
+*:-webkit-autofill {
+	background-color: $dark-accent;
+	color: $white;
 }
 
 html,
 body {
-	height: 100%;
+	min-height: 100%;
 }
 
 body {
-	background-color: $black;
+	// background-color: $black;
+	background: $my-bg2;
+
 	padding: 0;
 	margin: 0;
 	color: #fff;
@@ -69,7 +75,7 @@ img {
 }
 
 #root {
-	height: 100%;
+	min-height: 100%;
 }
 
 .dark-link {
@@ -78,11 +84,11 @@ img {
 	display: block;
 	margin-bottom: 0.5rem;
 	text-decoration: none;
-	color: $dark-accent;
+	color: #7f55fe;
 	transition: color 0.3s ease;
 
 	&:hover {
-		color: darken($accent, 10%);
+		color: $tmp-acc-light;
 	}
 }
 
@@ -107,18 +113,19 @@ input[type='number'] {
 }
 
 .error {
-	color: #8d2b3d;
+	color: $error;
 	font-size: 1rem;
 }
 
 .select2-selection {
 	&__control {
+		box-shadow: $my-bx !important;
+		background-color: $dark-accent !important;
+		border: $my-border !important;
 		cursor: pointer !important;
 		margin-bottom: 2rem;
 		border-radius: 10px !important;
 		min-height: 48px !important;
-		background-color: $dark-accent !important;
-		border: 1px solid transparent !important;
 		color: $white;
 		font-size: 18px;
 		width: 100%;
@@ -138,16 +145,16 @@ input[type='number'] {
 		}
 
 		&-notice {
-			color: #946e86 !important;
+			color: $some !important;
 		}
 	}
 
 	&__option {
 		&--is-focused {
-			background-color: darken($dark-accent, 7%) !important;
+			background-color: $accent !important;
 		}
 		&--is-selected {
-			background-color: darken($dark-accent, 8%) !important;
+			background-color: $accent !important;
 		}
 	}
 
@@ -157,7 +164,7 @@ input[type='number'] {
 	}
 
 	&__placeholder {
-		color: #946e86 !important;
+		color: $some !important;
 		margin-left: 6px !important;
 		text-align: left;
 	}
@@ -168,14 +175,14 @@ input[type='number'] {
 
 	&__multi-value {
 		border-radius: 6px !important;
-		background-color: lighten($dark-accent, 10%) !important;
+		background: $accent !important;
 
 		&__label {
 			color: $white !important;
 		}
 
 		&__remove:hover {
-			background-color: #8b2557 !important;
+			background-color: $s2ome !important;
 			color: $white !important;
 		}
 	}

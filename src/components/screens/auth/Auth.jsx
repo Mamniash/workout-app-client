@@ -6,14 +6,24 @@ import Layout from '../../layout/Layout'
 
 import styles from './Auth.module.scss'
 import { useAuthPage } from './useAuthPage'
+import Alert from '../../ui/alert/Alert'
 
 const Auth = () => {
-	const { setType, register, handleSubmit, errors, isPending, onSubmit } =
-		useAuthPage()
+	const {
+		setType,
+		register,
+		handleSubmit,
+		errors,
+		isPending,
+		onSubmit,
+		isSuccess,
+		error
+	} = useAuthPage()
+
 	return (
 		<>
-			<Layout heading='Sign in' bgImage='/images/auth-bg.png' />
-			<div className='wrapper-inner-page'>
+			<Layout heading='authentication' bgImage='/images/My/tmp.jpg' />
+			<div className={'wrapper-inner-page'}>
 				{isPending && <Loader />}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Field
@@ -36,13 +46,19 @@ const Auth = () => {
 						}}
 						type='password'
 						placeholder='Enter password'
+						style={{ marginTop: '15px' }}
 					/>
 
 					<div className={styles.wrapperButtons}>
 						<Button clickHandler={() => setType('login')}>Sign in</Button>
-						<Button clickHandler={() => setType('register')}>Sign up</Button>
+						<Button clickHandler={() => setType('register')} type='accent'>
+							Sign up
+						</Button>
 					</div>
 				</form>
+				{error && <Alert type='error' text={error} />}
+				{isSuccess && !error && <Alert text={'Success'} />}
+				{isPending && <Loader />}
 			</div>
 		</>
 	)

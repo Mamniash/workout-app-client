@@ -4,11 +4,7 @@ const USERS = '/users'
 
 class UserService {
 	async getProfile() {
-		try {
-			return $axios.get(`${USERS}/profile`)
-		} catch (error) {
-			throw new Error(error)
-		}
+		return $axios.get(`${USERS}/profile`)
 	}
 }
 export default new UserService()

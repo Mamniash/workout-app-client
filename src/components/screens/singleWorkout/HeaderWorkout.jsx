@@ -8,8 +8,8 @@ const HeaderWorkout = ({ isSuccess, workoutLog }) => {
 		<div
 			className={cn(stylesLayout.wrapper, stylesLayout.otherPage)}
 			style={{
-				backgroundImage: `url('/images/ex-bg-2.jpg')`,
-				height: 356
+				backgroundImage: `url('/images/My/tmp.jpg')`,
+				height: 256
 			}}
 		>
 			<Header backLink='/workouts' />

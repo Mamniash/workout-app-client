@@ -4,14 +4,16 @@
 .alert {
 	width: 100%;
 	background-color: #5be7c4;
-	color: #252a34;
+	color: $dark-accent;
 	margin-bottom: 1rem;
 	animation: opacity 0.4s;
 	padding: 10px;
 	border-radius: 10px;
+	border: $my-border;
+	box-shadow: $my-bx;
 
 	&.error {
-		background-color: #ff2e63;
+		background-color: #a10061;
 		color: $white;
 	}
 	&.info {

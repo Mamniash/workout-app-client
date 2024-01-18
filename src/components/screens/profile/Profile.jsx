@@ -15,7 +15,7 @@ const Profile = () => {
 			<div
 				className={cn(stylesLayout.wrapper, stylesLayout.otherPage)}
 				style={{
-					backgroundImage: `url('/images/profile-bg.jpg')`,
+					backgroundImage: `url(/images/My/tmp.jpg)`,
 					height: 356
 				}}
 			>
@@ -28,11 +28,10 @@ const Profile = () => {
 						<img
 							src={'/images/header/user.svg'}
 							alt='Profile'
-							height='56'
+							height='86'
 							draggable={false}
 						/>
 						<h1 className={stylesLayout.heading}>{data?.email}</h1>
-						<Statistic />
 					</>
 				)}
 			</div>
@@ -40,16 +39,7 @@ const Profile = () => {
 				className='wrapper-inner-page'
 				style={{ paddingLeft: 0, paddingRight: 0 }}
 			>
-				<div className={styles.before_after}>
-					<div>
-						<div className={styles.heading}>Before</div>
-						<img src='/images/after.jpg' alt='img' draggable={false} />
-					</div>
-					<div>
-						<div className={styles.heading}>After</div>
-						<img src='/images/after.jpg' alt='img' draggable={false} />
-					</div>
-				</div>
+				<Statistic />
 			</div>
 		</>
 	)
