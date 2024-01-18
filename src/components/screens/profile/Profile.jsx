@@ -16,7 +16,7 @@ const Profile = () => {
 				className={cn(stylesLayout.wrapper, stylesLayout.otherPage)}
 				style={{
 					backgroundImage: `url(/images/My/tmp.jpg)`,
-					height: 356
+					height: 280
 				}}
 			>
 				<Header />

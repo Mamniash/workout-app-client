@@ -19,7 +19,7 @@
 	&.otherPage {
 		height: 280px;
 		border-radius: 0 0 20px 20px;
-		box-shadow: $bx-accent;
+		box-shadow: 0 4px 4px $accent;
 		@media (max-width: $mobile) {
 			height: 260px !important;
 		}
