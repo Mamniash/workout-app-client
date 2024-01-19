@@ -9,6 +9,17 @@
 
 	> img {
 		margin: 0 0.9rem;
+
+		@media (max-width: $mobile) {
+			margin: 0 0.5rem;
+		}
+
+		&:last-child {
+			position: relative;
+			top: -1.9px;
+			scale: 1.08;
+		}
+
 		cursor: pointer;
 		border-bottom: 2px solid transparent;
 		padding-bottom: 0.5rem;

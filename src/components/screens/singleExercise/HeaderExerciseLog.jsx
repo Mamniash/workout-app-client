@@ -10,7 +10,7 @@ const HeaderExerciseLog = ({ isSuccess, exerciseLog }) => {
 		<div
 			className={cn(stylesLayout.wrapper, stylesLayout.otherPage)}
 			style={{
-				backgroundImage: `url('/images/My/tmp.jpg')`,
+				backgroundImage: `url('/public/images/My/jpg6.jpg')`,
 				height: 300
 			}}
 		>

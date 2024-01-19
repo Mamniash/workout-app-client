@@ -22,7 +22,7 @@ const Auth = () => {
 
 	return (
 		<>
-			<Layout heading='authentication' bgImage='/images/My/tmp.jpg' />
+			<Layout heading='authentication' bgImage='/images/My/12.jpg' />
 			<div className={'wrapper-inner-page'}>
 				{isPending && <Loader />}
 				<form onSubmit={handleSubmit(onSubmit)}>

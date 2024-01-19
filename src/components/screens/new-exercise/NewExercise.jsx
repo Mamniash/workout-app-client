@@ -26,7 +26,7 @@ const NewExercise = () => {
 		<>
 			<Layout
 				heading='Create new exercise'
-				bgImage='/images/My/tmp.jpg'
+				bgImage='/public/images/My/13.jpg'
 				backLink='/new-workout'
 			/>
 			<div className={'wrapper-inner-page'}>
@@ -79,7 +79,7 @@ const NewExercise = () => {
 										})}
 										onClick={() => onChange(getIconPath(name))}
 										draggable={false}
-										height='60'
+										height='55'
 									/>
 								))}
 							</div>

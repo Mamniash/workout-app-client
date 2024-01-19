@@ -29,7 +29,7 @@ const Profile = () => {
 			<div
 				className={cn(stylesLayout.wrapper, stylesLayout.otherPage)}
 				style={{
-					backgroundImage: `url(/images/My/tmp.jpg)`,
+					backgroundImage: `url(/images/My/jpg7.jpg)`,
 					height: 280
 				}}
 			>
@@ -45,6 +45,9 @@ const Profile = () => {
 			</div>
 			<div className='wrapper-inner-page'>
 				{isLoading && <Loader />}
+				<h2
+					style={{ marginBottom: '15px', fontSize: '24px' }}
+				>{`Start date - ${data?.createdAt.slice(0, 10)}`}</h2>
 				<Statistic />
 				<div
 					className={stylesAuth.wrapperButtons}
