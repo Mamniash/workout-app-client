@@ -12,8 +12,15 @@
 }
 
 .wrapper {
-	margin-top: 20vh;
+	height: 80vh;
 	display: flex;
 	text-align: center;
-	justify-content: center;
+	justify-content: space-between;
+	flex-direction: column;
+
+	img {
+		@media (max-width: $mobile) {
+			margin-top: 20px;
+		}
+	}
 }

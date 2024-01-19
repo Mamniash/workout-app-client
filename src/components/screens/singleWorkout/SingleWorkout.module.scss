@@ -7,6 +7,9 @@
 
 .wrapper {
 	> div.item {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
 		margin: 0 auto;
 		margin-bottom: 30px;
 		background-color: $dark-accent;
@@ -31,6 +34,9 @@
 			width: 100%;
 			@media (max-width: $mobile) {
 				font-size: 18px;
+			}
+			&:nth-child(2) {
+				width: 10%;
 			}
 		}
 	}

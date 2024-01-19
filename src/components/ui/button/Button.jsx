@@ -5,13 +5,15 @@ const Button = ({
 	children,
 	clickHandler = null,
 	size = 'xl',
-	type = 'common'
+	type = 'common',
+	...rest
 }) => {
 	return (
 		<div className={styles.wrapper}>
 			<button
 				className={cn(styles.button, styles[size], styles[type])}
 				onClick={clickHandler}
+				{...rest}
 			>
 				{children}
 			</button>

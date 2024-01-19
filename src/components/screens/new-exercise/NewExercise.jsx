@@ -15,13 +15,11 @@ const NewExercise = () => {
 		register,
 		handleSubmit,
 		errors,
-		isPending,
 		onSubmit,
 		Controller,
 		control,
-		error,
-		isSuccess,
-		data
+		data,
+		resultCreate
 	} = useExercisePage()
 
 	return (
@@ -32,9 +30,11 @@ const NewExercise = () => {
 				backLink='/new-workout'
 			/>
 			<div className={'wrapper-inner-page'}>
-				{error && <Alert type='error' text={error} />}
-				{isSuccess && !error && <Alert text={'Exercise has created'} />}
-				{isPending && <Loader />}
+				{resultCreate.error && (
+					<Alert type='error' text={resultCreate.error.message} />
+				)}
+				{resultCreate.isSuccess && <Alert text={'Exercise has created'} />}
+				{resultCreate.isPending && <Loader />}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						error={errors?.name?.message}

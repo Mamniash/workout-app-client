@@ -10,24 +10,18 @@ import { Link } from 'react-router-dom'
 import SelectExercises from './SelectExercises.jsx'
 
 const NewWorkout = () => {
-	const {
-		register,
-		handleSubmit,
-		errors,
-		isPending,
-		onSubmit,
-		error,
-		isSuccess,
-		control
-	} = useNewWorkout()
+	const { register, handleSubmit, errors, onSubmit, control, resultCreate } =
+		useNewWorkout()
 
 	return (
 		<>
 			<Layout heading='Create new workout' bgImage='/images/My/tmp.jpg' />
 			<div className='wrapper-inner-page'>
-				{error && <Alert type='error' text={error} />}
-				{isSuccess && !error && <Alert text={'Workout has created'} />}
-				{isPending && <Loader />}
+				{resultCreate.error && (
+					<Alert type='error' text={resultCreate.error.message} />
+				)}
+				{resultCreate.isSuccess && <Alert text={'Workout has created'} />}
+				{resultCreate.isPending && <Loader />}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						error={errors?.name?.message}

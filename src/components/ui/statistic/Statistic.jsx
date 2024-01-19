@@ -1,4 +1,4 @@
-import { useProfile } from '../../screens/profile/useProfile'
+import { useProfile } from '../../screens/profile/hooks/useProfile'
 import styles from './Statistic.module.scss'
 
 const Statistic = () => {

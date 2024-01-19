@@ -4,10 +4,11 @@ import styles from '../singleWorkout/SingleWorkout.module.scss'
 import Alert from '../../ui/alert/Alert'
 import Loader from '../../ui/Loader'
 import ItemWorkout from './ItemWorkout'
+import { useState } from 'react'
 
 const ListWorkouts = () => {
-	const { mutate, data, error, isPending, isSuccess, isSuccessMutate } =
-		useListWorkout()
+	const { resultCreateLog, resultDelete, resultGet, error } = useListWorkout()
+	const { data, isSuccess } = resultGet
 	return (
 		<>
 			<Layout heading='ListWorkouts' bgImage={'/images/My/tmp.jpg'} />
@@ -16,12 +17,19 @@ const ListWorkouts = () => {
 				style={{ paddingLeft: 0, paddingRight: 0 }}
 			>
 				{error && <Alert type='error' text={error} />}
-				{isSuccessMutate && <Alert text='Workout log created' />}
-				{isPending && <Loader />}
-				{isSuccess && (
+				{resultDelete.isSuccess && !error && (
+					<Alert text='Workout has deleted' />
+				)}
+				{(resultCreateLog.isPending || resultDelete.isPending) && <Loader />}
+				{isSuccess && !error && (
 					<div className={styles.wrapper}>
 						{data.map(workout => (
-							<ItemWorkout key={workout.id} workout={workout} mutate={mutate} />
+							<ItemWorkout
+								key={workout.id}
+								workout={workout}
+								mutateCreate={resultCreateLog.mutate}
+								mutateDelete={resultDelete.mutate}
+							/>
 						))}
 						{isSuccess && data?.length === 0 && (
 							<Alert type='warning' text='Workouts not found' />
