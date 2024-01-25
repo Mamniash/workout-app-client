@@ -9,7 +9,7 @@ function Home() {
 		<>
 			<Layout>
 				<div className={styles.wrapper}>
-					<img src='/images/My/p.png' alt='%' />
+					<img src='/images/main.png' alt='%' />
 
 					<Button
 						clickHandler={() => navigate('/workouts')}

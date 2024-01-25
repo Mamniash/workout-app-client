@@ -1,10 +1,10 @@
 const Loader = () => {
 	return (
 		<img
-			src='/images/three-dots.svg'
+			src='/images/loader/three-dots.svg'
 			alt='loader'
 			draggable={false}
-			width={90}
+			width={100}
 		/>
 	)
 }

@@ -11,12 +11,7 @@ const ListWorkouts = () => {
 	const { data, isSuccess } = resultGet
 	return (
 		<>
-			<Layout
-				heading='ListWorkouts'
-				bgImage={
-					'/public/images/My/perfectly-ordered-gym-equipment-above-view.jpg'
-				}
-			/>
+			<Layout heading='ListWorkouts' bgImage={'/images/list-workout.jpg'} />
 			<div
 				className='wrapper-inner-page'
 				style={{ paddingLeft: 0, paddingRight: 0 }}

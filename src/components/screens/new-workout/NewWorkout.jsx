@@ -15,7 +15,7 @@ const NewWorkout = () => {
 
 	return (
 		<>
-			<Layout heading='Create new workout' bgImage='/images/My/jpg5.jpg' />
+			<Layout heading='Create new workout' bgImage='/images/new-workout.jpg' />
 			<div className='wrapper-inner-page'>
 				{resultCreate.error && (
 					<Alert type='error' text={resultCreate.error.message} />

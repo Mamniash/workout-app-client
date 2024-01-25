@@ -1,10 +1,11 @@
 import cn from 'clsx'
 import stylesLayout from '../../layout/Layout.module.scss'
+import stylesAuth from '../auth/Auth.module.scss'
+import styles from './Profile.module.scss'
 import Header from '../../layout/header/Header'
 import Loader from '../../ui/Loader'
 import Button from '../../ui/button/Button'
 import Statistic from '../../ui/statistic/Statistic'
-import stylesAuth from '../auth/Auth.module.scss'
 import { useLogOut } from './hooks/useLogOut'
 import { useProfile } from './hooks/useProfile'
 import { useDeleteAllExercises } from './hooks/useDeleteAllExercises'
@@ -29,7 +30,7 @@ const Profile = () => {
 			<div
 				className={cn(stylesLayout.wrapper, stylesLayout.otherPage)}
 				style={{
-					backgroundImage: `url(/images/My/jpg7.jpg)`,
+					backgroundImage: `url(/images/profile.jpg)`,
 					height: 280
 				}}
 			>
@@ -43,11 +44,9 @@ const Profile = () => {
 				/>
 				<h1 className={stylesLayout.heading}>{data?.email}</h1>
 			</div>
-			<div className='wrapper-inner-page'>
+			<div className={cn('wrapper-inner-page', styles.wrapper)}>
 				{isLoading && <Loader />}
-				<h2
-					style={{ marginBottom: '15px', fontSize: '24px' }}
-				>{`Start date - ${data?.createdAt.slice(0, 10)}`}</h2>
+				<h2>{`Start date - ${data?.createdAt.slice(0, 10)}`}</h2>
 				<Statistic />
 				<div
 					className={stylesAuth.wrapperButtons}

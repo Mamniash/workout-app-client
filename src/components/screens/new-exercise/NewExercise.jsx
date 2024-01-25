@@ -26,7 +26,7 @@ const NewExercise = () => {
 		<>
 			<Layout
 				heading='Create new exercise'
-				bgImage='/public/images/My/13.jpg'
+				bgImage='/images/new-exercise.jpg'
 				backLink='/new-workout'
 			/>
 			<div className={'wrapper-inner-page'}>

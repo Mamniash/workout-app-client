@@ -39,7 +39,7 @@ export const useAuthPage = () => {
 			reset()
 
 			setTimeout(() => {
-				//setIsAuth(true) //!!!!!!!!!!!!!!
+				setIsAuth(true) //TODO fix this shit
 			}, 1000)
 		}
 	})
